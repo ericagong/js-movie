@@ -26,3 +26,4 @@ dist-ssr
 
 .env
 cypress.env.json
+env.js
