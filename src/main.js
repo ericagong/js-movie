@@ -1,14 +1,15 @@
+import "../styles/main.css";
 import { API_KEY } from "./env.js";
 
 const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200";
 const BASE_URL = "https://api.themoviedb.org/3/movie/popular";
 
-const createMovieItem = ({ id, poster_path, title, vote_average }) => `
-  <li class="movie-item">
-    <img class="movie-poster" src="${BASE_IMAGE_URL}${poster_path}" alt="${title}" />
-    <div class="movie-title">${title}</div>
-    <div class="movie-rate">${vote_average}</div>
-  </li>
+const createMovieCard = ({ id, poster_path, title, vote_average }) => `
+  <div class="movie-card" key="${id}">
+    <div class="poster" style="background-image: url(${BASE_IMAGE_URL}${poster_path})"></div>
+    <div class="rate">${vote_average}</div>
+    <div class="title">${title}</div>
+  </div>
 `;
 
 async function getMovies(page = 1) {
@@ -25,37 +26,38 @@ async function getMovies(page = 1) {
   }
 }
 
-function createMovieList(movies) {
+function createMovieCardView(movies) {
   return `
-    <ul class="movie-list">
-      ${movies.map(createMovieItem).join("")}
-    </ul>
+    <div class="movie-card-view">
+      ${movies.map(createMovieCard).join("")}
+    </div>
   `;
 }
 
-function createMovieListContainer(movies) {
+function createPopularMoviesSection(movies) {
   return `
-    <div class="movie-list-container">
-      <div class="movie-list-title">지금 인기 있는 영화</div>
-      ${createMovieList(movies)}
-      <button class="load-more" data-page="1">더보기</button>
+    <div class="popular-movies-section">
+        <div id="popular-movies-title">지금 인기 있는 영화</div>
+        ${createMovieCardView(movies)}
+        <button id="load-more-movies" data-page="1">더보기</button>
     </div>
   `;
 }
 
 addEventListener("load", async () => {
   const $app = document.querySelector("#app");
-  const initialMovies = await getMovies();
-  $app.innerHTML = createMovieListContainer(initialMovies);
 
-  const $loadMoreButton = document.querySelector(".load-more");
+  const initialMovies = await getMovies();
+  $app.innerHTML = createPopularMoviesSection(initialMovies);
+
+  const $loadMoreButton = document.querySelector("#load-more-movies");
 
   $loadMoreButton.addEventListener("click", async () => {
     const nextPage = Number($loadMoreButton.dataset.page) + 1;
     const movies = await getMovies(nextPage);
 
-    const $movieList = document.querySelector(".movie-list");
-    $movieList.innerHTML += movies.map(createMovieItem).join("");
+    const $movieCardView = document.querySelector(".movie-card-view");
+    $movieCardView.innerHTML += movies.map(createMovieCard).join("");
 
     $loadMoreButton.dataset.page = nextPage;
   });

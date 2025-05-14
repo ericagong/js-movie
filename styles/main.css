@@ -15,120 +15,96 @@ body {
   background-color: var(--color-bluegray-80);
 }
 
-#wrap,
-section {
+#app {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-main {
+.popular-movies-section {
+  max-width: 1280px;
   margin: 64px 0;
 }
 
-.star {
-  width: 24px;
-}
-
-button {
-  border: 0;
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-button.primary {
-  color: var(--color-white);
-  font-weight: bold;
-  background-color: var(--color-lightblue-90);
-  border-radius: 4px;
-}
-
-#wrap {
-  min-width: 1440px;
-  background-color: var(--color-bluegray-100);
-}
-
-#wrap h2 {
+#popular-movies-title {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 32px;
 }
 
-.container {
-  max-width: 1280px;
-  margin: 0 auto;
+.movie-card-view {
+  display: grid;
+  gap: 48px 16px;
+  grid-template-columns: repeat(5, 1fr); /* 기본: 데스크탑 5개 */
+  padding-bottom: 48px;
 }
 
-.background-container {
-  position: relative;
-  background-position: center center;
-  background-size: cover;
-  height: 500px;
-  padding: 48px;
+@media (max-width: 1120px) {
+  .movie-card-view {
+    grid-template-columns: repeat(4, 1fr); /* 데스크탑 화면 축소 4개 */
+  }
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+@media (max-width: 800px) {
+  .movie-card-view {
+    grid-template-columns: repeat(3, 1fr); /* 테블릿 3개 */
+  }
 }
 
-.top-rated-container {
-  user-select: none;
-  position: relative;
-  z-index: 2;
-  max-width: 1280px;
-  margin: 0 auto;
+@media (max-width: 390px) {
+  .movie-card-view {
+    grid-template-columns: 1fr; /* 모바일 1개 */
+  }
 }
 
-.top-rated-movie {
-  margin-top: 64px;
-}
-
-.top-rated-movie > *:not(:last-child) {
-  margin-bottom: 8px;
-}
-
-h1.logo {
-  font-size: 2rem;
-}
-
-.rate {
-  display: flex;
-  align-items: baseline;
-  color: var(--color-yellow);
-}
-
-.rate > img {
-  position: relative;
-  top: 2px;
-}
-
-span.rate-value {
-  margin-left: 8px;
-  font-weight: bold;
-  font-size: 1.66rem;
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-footer.footer {
-  min-height: 180px;
-  background-color: var(--color-bluegray-80);
+.movie-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.1rem;
 }
 
-footer.footer p:not(:last-child) {
+.movie-card > .poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
   margin-bottom: 8px;
+}
+
+.movie-card > .rate {
+  color: var(--color-yellow);
+  top: -1px;
+}
+
+.movie-card > .rate::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../images/star_empty.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px; 
+}
+
+.movie-card > .title {
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+#load-more-movies {
+  width: 100%;
+  height: 46px;
+  background-color: var(--color-lightblue-90);
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
