@@ -1,8 +1,8 @@
 const POPULAR_MOVIES_URL = "https://api.themoviedb.org/3/movie/popular";
 
-describe("API 테스트", () => {
+describe("실제 API 테스트", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173/");
+    cy.visit("http://localhost:5173");
   });
 
   // https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1
@@ -22,3 +22,4 @@ describe("API 테스트", () => {
     cy.get("@popularMovies").its("body.results").should("have.length", 20);
   });
 });
+

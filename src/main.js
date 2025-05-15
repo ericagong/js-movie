@@ -12,6 +12,7 @@ const createMovieCard = ({ id, poster_path, title, vote_average }) => `
   </div>
 `;
 
+
 async function getMovies(page = 1) {
   const url = `${BASE_URL}?api_key=${API_KEY}&language=ko-KR&page=${page}`;
 
@@ -19,10 +20,10 @@ async function getMovies(page = 1) {
     const response = await fetch(url);
     if (!response.ok) throw new Error("API 요청 실패");
     const data = await response.json();
-    return data.results;
+    return {movies: data.results, isLast: data.page === data.total_pages};
   } catch (error) {
     console.error("🚨 영화 불러오기 실패:", error);
-    return [];
+    return {movies: [], isLast: false};
   }
 }
 
@@ -34,31 +35,32 @@ function createMovieCardView(movies) {
   `;
 }
 
-function createPopularMoviesSection(movies) {
+function createPopularMoviesSection(movies, isLast) {
   return `
     <div class="popular-movies-section">
         <div id="popular-movies-title">지금 인기 있는 영화</div>
         ${createMovieCardView(movies)}
-        <button id="load-more-movies" data-page="1">더보기</button>
+        <button id="load-more-movies" data-page="1" style="visibility: ${isLast ? "hidden": "visible"}">더보기</button>
     </div>
   `;
 }
 
 addEventListener("load", async () => {
+  // 초기 렌더링
   const $app = document.querySelector("#app");
+  const {movies, isLast} = await getMovies();
+  $app.innerHTML = createPopularMoviesSection(movies, isLast);
 
-  const initialMovies = await getMovies();
-  $app.innerHTML = createPopularMoviesSection(initialMovies);
-
+  // 더보기 버튼 클릭 시 영화 목록 추가 조회
   const $loadMoreButton = document.querySelector("#load-more-movies");
-
   $loadMoreButton.addEventListener("click", async () => {
     const nextPage = Number($loadMoreButton.dataset.page) + 1;
-    const movies = await getMovies(nextPage);
-
+    const {movies, isLast} = await getMovies(nextPage);
+    
+    $loadMoreButton.style.visibility = isLast ? "hidden" : "visible";
+    $loadMoreButton.dataset.page = isLast ? null : nextPage;
+    
     const $movieCardView = document.querySelector(".movie-card-view");
     $movieCardView.innerHTML += movies.map(createMovieCard).join("");
-
-    $loadMoreButton.dataset.page = nextPage;
   });
 });
