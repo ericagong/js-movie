@@ -15,15 +15,24 @@ const createMovieCard = ({ id, poster_path, title, vote_average }) => `
 
 async function getMovies(page = 1) {
   const url = `${BASE_URL}?api_key=${API_KEY}&language=ko-KR&page=${page}`;
-
+  
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error("API 요청 실패");
+    if (!response.ok) {
+      let message = "알 수 없는 오류가 발생했습니다.";
+      if (response.status === 400) message = "잘못된 요청입니다.";
+      else if (response.status === 401) message = "인증되지 않은 사용자입니다.";
+      else if (response.status === 403) message = "접근 권한이 없습니다.";
+      else if (response.status === 404) message = "요청한 자원을 찾을 수 없습니다.";
+      else if (response.status >= 500) message = "서버 오류가 발생했습니다.";
+
+      throw new Error(message); 
+    }
+
     const data = await response.json();
-    return {movies: data.results, isLast: data.page === data.total_pages};
+    return {movies: data.results, isLast: data.page === data.total_pages, hasError: false, errorMessage: null};
   } catch (error) {
-    console.error("🚨 영화 불러오기 실패:", error);
-    return {movies: [], isLast: false};
+    return {movies: [], isLast: null, hasError: true, errorMessage: error.message};
   }
 }
 
@@ -45,17 +54,34 @@ function createPopularMoviesSection(movies, isLast) {
   `;
 }
 
+function createErrorMessage(errorMessage) {
+  return `
+    <div class="error-message">${errorMessage}</div>
+  `;
+}
+
 addEventListener("load", async () => {
   // 초기 렌더링
   const $app = document.querySelector("#app");
-  const {movies, isLast} = await getMovies();
+  const {movies, isLast, hasError, errorMessage} = await getMovies();
+  
+  if(!!hasError) {
+    $app.innerHTML = createErrorMessage(errorMessage);
+    return;
+  }
+
   $app.innerHTML = createPopularMoviesSection(movies, isLast);
 
   // 더보기 버튼 클릭 시 영화 목록 추가 조회
   const $loadMoreButton = document.querySelector("#load-more-movies");
   $loadMoreButton.addEventListener("click", async () => {
     const nextPage = Number($loadMoreButton.dataset.page) + 1;
-    const {movies, isLast} = await getMovies(nextPage);
+    const {movies, isLast, hasError, errorMessage} = await getMovies(nextPage);
+
+    if(!!hasError) {
+    $app.innerHTML = createErrorMessage(errorMessage);
+    return;
+    } 
     
     $loadMoreButton.style.visibility = isLast ? "hidden" : "visible";
     $loadMoreButton.dataset.page = isLast ? null : nextPage;

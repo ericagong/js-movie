@@ -55,3 +55,87 @@ describe("메인 페이지 영화 목록 조회 시나리오 테스트", () => {
         })
     })
 })
+ 
+describe("비동기 통신 과정 오류 테스트", () => {
+    
+  describe("API 통신 오류 케이스", () => {
+    
+    describe("HTTP 4xx 클라이언트 오류 케이스", () => {
+      beforeEach(() => {
+        cy.visit("http://localhost:5173/");
+      });
+
+      it("400 Bad Request 오류 시, '잘못된 요청입니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 400,
+          body: { message: "Bad Request" },
+        }).as("badRequest");
+        cy.reload();
+        cy.wait("@badRequest");
+
+        cy.contains("잘못된 요청입니다.").should("exist");
+      });
+      
+      it("401 Unauthorized 오류 시, '인증되지 않은 사용자입니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 401,
+          body: { message: "Unauthorized" },
+        }).as("unauthorized");
+        cy.reload();
+        cy.wait("@unauthorized");
+
+        cy.contains("인증되지 않은 사용자입니다.").should("exist");
+      });
+
+      it("403 Forbidden 오류 시, '접근 권한이 없습니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 403,
+          body: { message: "Forbidden" },
+        }).as("forbidden");
+        cy.reload();
+        cy.wait("@forbidden");
+
+        cy.contains("접근 권한이 없습니다.").should("exist");
+      });
+
+      it("404 Not Found 오류 시, '요청한 자원을 찾을 수 없습니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 404,
+          body: { message: "Not Found" },
+        }).as("notFound");
+        cy.reload();
+        cy.wait("@notFound");
+
+        cy.contains("요청한 자원을 찾을 수 없습니다.").should("exist");
+      });
+    });
+
+    describe("HTTP 5xx 서버 오류 케이스", () => {
+      beforeEach(() => {
+        cy.visit("http://localhost:5173/");
+      });
+
+      it("500 Internal Server Error 오류 시, '서버 오류가 발생했습니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 500,
+          body: { message: "Internal Server Error" },
+        }).as("internalServerError");
+        cy.reload();
+        cy.wait("@internalServerError");
+
+        cy.contains("서버 오류가 발생했습니다.").should("exist");
+      });
+
+      it("502 Bad Gateway 오류 시, '서버 오류가 발생했습니다.' 메시지가 나타난다.", () => {
+        cy.intercept("GET", getPopularMoviesUrl(1), {
+          statusCode: 502,
+          body: { message: "Bad Gateway" },
+        }).as("badGateway");
+        cy.reload();
+        cy.wait("@badGateway");
+
+        cy.contains("서버 오류가 발생했습니다.").should("exist");
+      });
+    });
+  });
+})
