@@ -1,0 +1,399 @@
+{
+  "page": 2,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/kFXtAwJYbRTqiyQpE9kDc8qEP3X.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 1225915,
+      "original_language": "hi",
+      "original_title": "ज्वेल थीफ: द हीस्ट बिगिन्स",
+      "overview": "기발한 사기꾼 레한이 잔혹한 라이벌 라잔을 따돌리기 위해 치밀한 다이아몬드 강탈 작전을 계획한다. 치열한 두뇌 싸움과 긴장감 넘치는 전개가 돋보이는 작품.",
+      "popularity": 106.038,
+      "poster_path": "/miJvhfYMvPymG75Gl4q0QatyNBk.jpg",
+      "release_date": "2025-04-25",
+      "title": "보석 도둑: 더 하이스트 비긴스",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 40
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/svLj9iyRmmeNVRsMreANn7DPPZE.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 1356236,
+      "original_language": "en",
+      "original_title": "Saint Catherine",
+      "overview": "",
+      "popularity": 110.4444,
+      "poster_path": "/hBJdzKPeDaC96AzlrtMWBomYSZV.jpg",
+      "release_date": "2024-09-24",
+      "title": "Saint Catherine",
+      "video": false,
+      "vote_average": 6.569,
+      "vote_count": 29
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tGjo4L15aELqZGqQH3ThZQGMKmL.jpg",
+      "genre_ids": [
+        28,
+        12,
+        18
+      ],
+      "id": 1011477,
+      "original_language": "en",
+      "original_title": "Karate Kid: Legends",
+      "overview": "",
+      "popularity": 120.2513,
+      "poster_path": "/ckI6bmQDvvGy20FPTIW1kfGKGRK.jpg",
+      "release_date": "2025-05-08",
+      "title": "가라데 키드: 레전드",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 21
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6dC7ULfiutxwEAs7LjWHL2Tc7Zv.jpg",
+      "genre_ids": [
+        27,
+        35
+      ],
+      "id": 1124620,
+      "original_language": "en",
+      "original_title": "The Monkey",
+      "overview": "\"공포의 근원, 악을 품은 인형의 저주\"\r 쌍둥이 형제 빌과 테드는 할아버지의 유품 정리 중 오래된 원숭이 장난감을 발견한다. 심벌즈를 치는 이 원숭이 인형은 어린 시절 그들에게 공포의 대상이었지만, 이제 어른이 된 두 형제는 그것을 단순한 장난감으로 치부한다. 하지만 인형이 다시 집에 들어오자 기이한 사건들이 연이어 발생하기 시작한다. 어린 시절의 트라우마가 되살아나고, 원숭이 인형을 둘러싼 끔찍한 비밀이 드러나며 형제의 삶은 걷잡을 수 없는 혼돈 속으로 빠져드는데...",
+      "popularity": 104.1078,
+      "poster_path": "/yYa8Onk9ow7ukcnfp2QWVvjWYel.jpg",
+      "release_date": "2025-02-14",
+      "title": "더 몽키",
+      "video": false,
+      "vote_average": 5.907,
+      "vote_count": 605
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vNUwK5P42m81uG57kKI1WxSZwIQ.jpg",
+      "genre_ids": [
+        35,
+        10749
+      ],
+      "id": 1403735,
+      "original_language": "te",
+      "original_title": "లైలా",
+      "overview": "",
+      "popularity": 105.3233,
+      "poster_path": "/l4gsNxFPGpzbq0D6QK1a8vO1lBz.jpg",
+      "release_date": "2025-02-14",
+      "title": "లైలా",
+      "video": false,
+      "vote_average": 5,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zo8CIjJ2nfNOevqNajwMRO6Hwka.jpg",
+      "genre_ids": [
+        16,
+        12,
+        10751,
+        35
+      ],
+      "id": 1241982,
+      "original_language": "en",
+      "original_title": "Moana 2",
+      "overview": "바다를 누볐던 선조들에게서 예기치 못한 부름을 받은 모아나가 마우이와 다시 만나 새로운 선원들과 함께 오랫동안 잊혀진 멀고 위험한 바다 너머로 떠나는 특별한 모험을 담은 이야기",
+      "popularity": 100.6761,
+      "poster_path": "/hwmwTFtMbzxAWbIOp1RyyiOCyx0.jpg",
+      "release_date": "2024-11-21",
+      "title": "모아나 2",
+      "video": false,
+      "vote_average": 7.08,
+      "vote_count": 2346
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gfe8onl8FhaJg4C47Kecj7CdNvf.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 1151039,
+      "original_language": "en",
+      "original_title": "Nonnas",
+      "overview": "사랑하는 어머니를 잃은 남자. 어머니를 기리기 위해 모든 것을 걸고 시작한 도전은? 진짜 이탈리아 할머니 셰프 ‘논나’들과 함께하는 특별한 레스토랑을 여는 것!",
+      "popularity": 93.6505,
+      "poster_path": "/tG9J5z4B5m2vvrPg5W5Ny7aFWHt.jpg",
+      "release_date": "2025-05-01",
+      "title": "논나",
+      "video": false,
+      "vote_average": 6.764,
+      "vote_count": 91
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bIh56F8e5EaZ3r2nD1hXAOisItZ.jpg",
+      "genre_ids": [
+        12,
+        10751
+      ],
+      "id": 1094473,
+      "original_language": "fr",
+      "original_title": "Bambi, l'histoire d'une vie dans les bois",
+      "overview": "",
+      "popularity": 162.7618,
+      "poster_path": "/nP7BaO9rObeav8SqcBcfcVoQN8g.jpg",
+      "release_date": "2024-10-16",
+      "title": "Bambi, l'histoire d'une vie dans les bois",
+      "video": false,
+      "vote_average": 5.8,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1AWjIUgbZYaKbwUH5qoJaKCcRkf.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 1471014,
+      "original_language": "fr",
+      "original_title": "Van Gogh by Vincent",
+      "overview": "",
+      "popularity": 90.3362,
+      "poster_path": "/z73X4WKZghBh5fri31o8P6vBEB2.jpg",
+      "release_date": "2025-03-26",
+      "title": "Van Gogh by Vincent",
+      "video": false,
+      "vote_average": 6.4,
+      "vote_count": 14
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1YMrOtrW7b4pL2lfD8UciZPOJGs.jpg",
+      "genre_ids": [
+        18,
+        53,
+        9648
+      ],
+      "id": 974576,
+      "original_language": "en",
+      "original_title": "Conclave",
+      "overview": "교황의 예기치 못한 죽음 이후 새로운 교황을 선출하는 콘클라베가 시작되고, 로렌스는 단장으로서 선거를 총괄하게 된다. 한편 당선에 유력했던 후보들이 스캔들에 휘말리면서 교활한 음모와 탐욕이 수면 위로 드러나는데…",
+      "popularity": 74.7429,
+      "poster_path": "/aPPUy4JBYrJeRlQwMxdKwa3Ozkd.jpg",
+      "release_date": "2024-10-25",
+      "title": "콘클라베",
+      "video": false,
+      "vote_average": 7.198,
+      "vote_count": 2441
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bFmziv84NfEVEGTK8c6EVY3bxve.jpg",
+      "genre_ids": [
+        28,
+        80,
+        9648,
+        53
+      ],
+      "id": 1180906,
+      "original_language": "en",
+      "original_title": "Desert Dawn",
+      "overview": "",
+      "popularity": 79.7114,
+      "poster_path": "/S21BfLrJSD9njucBfY3CKqp8rD.jpg",
+      "release_date": "2025-05-15",
+      "title": "Desert Dawn",
+      "video": false,
+      "vote_average": 9,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+      "genre_ids": [
+        12,
+        10751,
+        16
+      ],
+      "id": 762509,
+      "original_language": "en",
+      "original_title": "Mufasa: The Lion King",
+      "overview": "길을 잃고 혼자가 된 새끼 사자 무파사는 광활한 야생을 떠돌던 중 왕의 혈통이자 예정된 후계자 타카와 우연히 만나게 된다. 마치 친형제처럼 끈끈한 우애를 나누며 함께 자란 무파사와 타카는 운명을 개척하기 위해 거대한 여정을 함께 떠난다. 한 치 앞을 알 수 없는 적들의 위협 속에서 두 형제의 끈끈했던 유대에 금이 가기 시작하고 예상치 못한 위기까지 맞닥뜨리게 되는데…",
+      "popularity": 82.0409,
+      "poster_path": "/1VUExee8iFohFTwYVi4IOArYyaM.jpg",
+      "release_date": "2024-12-18",
+      "title": "무파사: 라이온 킹",
+      "video": false,
+      "vote_average": 7.408,
+      "vote_count": 2092
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kpyXnnyO7UiK7FZFHJ5Ae7DRAIF.jpg",
+      "genre_ids": [
+        10402,
+        99
+      ],
+      "id": 1469239,
+      "original_language": "es",
+      "original_title": "Karol G: Mañana fue muy bonito",
+      "overview": "카롤 G는 어떻게 스타덤에 올랐을까? 매진된 스타디움 투어, 신곡 제작, 그리고 새로운 앨범 발매까지. 그녀가 베일을 벗고 자신의 일상을 전격 공개한다.\r 꿈이 너무 큰 거 아냐? 출신 지역도 그렇고, 게다가 여자는 절대 글로벌 스타가 될 수 없어. 사람들은 카롤 G에게 말했다. 하지만 ‘비초타’를 과소평가한 이들의 예상은 결국 틀렸다. 《카롤 G: 투모로우 워즈 뷰티풀》은 콜롬비아 메데인 태생의 평범한 소녀가 어떻게 세계적인 스타로 성장했는지 그 여정을 담아낸다. 디스 머신(This Machine)이 제작하고 크리스티나 코스탄티니 감독이 연출한 다큐멘터리는 역대 최고 기록을 세운 역사적인 스타디움 투어를 중심으로, 그녀가 비평가들의 의구심을 뒤엎고 어떻게 자신의 능력을 입증했는지 보여준다. 카롤 G는 남다른 결단력과 타고난 재능, 그리고 지치지 않는 성실함을 바탕으로 슈퍼스타의 반열에 올랐으며, 차세대 라틴 여성 아티스트들에게 새로운 길을 열어줬다. 영화는 그녀의 무대 뒤 일상을 엿볼 드문 기회를 선사한다.",
+      "popularity": 69.3643,
+      "poster_path": "/13G5SX7892DtUxvAxlxYDXWkEKf.jpg",
+      "release_date": "2025-04-30",
+      "title": "카롤 G: 투모로우 워즈 뷰티풀",
+      "video": false,
+      "vote_average": 8.215,
+      "vote_count": 72
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7ONMDhnErvpkKvkZqM82ud7bzcT.jpg",
+      "genre_ids": [
+        28,
+        12,
+        53
+      ],
+      "id": 575265,
+      "original_language": "en",
+      "original_title": "Mission: Impossible - The Final Reckoning",
+      "overview": "디지털상의 모든 정보를 통제할 수 있는 사상 초유의 무기로 인해 전 세계 국가와 조직의 기능이 마비되고, 인류 전체가 위협받는 절체절명의 위기가 찾아온다. 이를 막을 수 있는 건 오직 존재 자체가 기밀인 에단 헌트와 그가 소속된 IMF뿐이다. 무기를 무력화하는 데 반드시 필요한 키를 손에 쥔 에단 헌트. 오랜 동료 루터와 벤지, 그리고 새로운 팀원이 된 그레이스, 파리, 드가와 함께 지금껏 경험했던 그 어떤 상대보다도 강력한 적에 맞서 모두의 운명을 건 불가능한 미션에 뛰어든다.",
+      "popularity": 86.2145,
+      "poster_path": "/5Zxdorl5TharlI9S47YxoKzGCsi.jpg",
+      "release_date": "2025-05-17",
+      "title": "미션 임파서블: 파이널 레코닝",
+      "video": false,
+      "vote_average": 8.3,
+      "vote_count": 3
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+      "genre_ids": [
+        28,
+        878,
+        35,
+        10751
+      ],
+      "id": 939243,
+      "original_language": "en",
+      "original_title": "Sonic the Hedgehog 3",
+      "overview": "너클즈, 테일즈와 함께 평화로운 일상을 보내던 초특급 히어로 소닉. 연구 시설에 50년간 잠들어 있던 사상 최강의 비밀 병기 \"섀도우\"가 탈주하자, 세계 수호 통합 부대(약칭 세.수.통)에 의해 극비 소집된다. 소중한 것을 잃은 분노와 복수심에 불타는 섀도우는 소닉의 초고속 스피드와 너클즈의 최강 펀치를 단 단숨에 제압해버린다. 세상을 지배하려는 닥터 로보트닉과 그의 할아버지 제럴드 박사는 섀도우의 엄청난 힘 카오스 에너지를 이용해 인류를 정복하려고 하는데…",
+      "popularity": 77.3209,
+      "poster_path": "/5ZoI48Puf5i5FwI6HOpunDuJOw0.jpg",
+      "release_date": "2024-12-19",
+      "title": "수퍼 소닉 3",
+      "video": false,
+      "vote_average": 7.721,
+      "vote_count": 2537
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/Zes06xI18u47pblwRGTtqRm0R8.jpg",
+      "genre_ids": [
+        28,
+        53,
+        80,
+        18
+      ],
+      "id": 1276073,
+      "original_language": "ja",
+      "original_title": "新幹線大爆破",
+      "overview": "시속 100km 이하로 속도가 떨어지면 폭탄이 터지는 도쿄행 초고속 열차. 당국은 촌각을 다투며 탑승자 모두를 구하려 한다.",
+      "popularity": 71.6679,
+      "poster_path": "/pqzza53yKNX65Z2dgrTbR1KoUnY.jpg",
+      "release_date": "2025-04-23",
+      "title": "신칸센 대폭파",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 166
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/XSTGtPVegdHD1xy5GPuK0tURTQ.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 464052,
+      "original_language": "en",
+      "original_title": "Wonder Woman 1984",
+      "overview": "사랑의 힘으로 시련을 딛고 진정한 슈퍼히어로로 거듭난 원더 우먼 다이애나 프린스는 고고학자로서 인간들 사이에서 조용히 살고 있다. 다이애나의 마음 한편엔 세상을 떠난 연인 스티브 트레버의 빈자리가 여전하다. 그녀의 주변이 어수선해지기 시작한 건 동료 바바라가 관리 중이던 고대 유물을 수상한 석유 부자 맥스 로드에게 맡기고서부터. 사람들의 소원을 들어주는 대가로 그들에게서 가장 소중한 것을 앗아가는 빌런이 세상을 어지럽히기 시작하고, 다이애나의 앞엔 거짓말처럼 죽었던 스티브가 나타나는데...",
+      "popularity": 67.1611,
+      "poster_path": "/4NLlx2Qr5M6W7QCGFIbGY0qWpoa.jpg",
+      "release_date": "2020-12-16",
+      "title": "원더 우먼 1984",
+      "video": false,
+      "vote_average": 6.412,
+      "vote_count": 8610
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4eC0tsU9OxR3Adlo1yRJYUDraW9.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 1092899,
+      "original_language": "en",
+      "original_title": "The Siege",
+      "overview": "",
+      "popularity": 71.9704,
+      "poster_path": "/hVh4hMzkXNLnScudbid6hDvjMPk.jpg",
+      "release_date": "2023-03-10",
+      "title": "The Siege",
+      "video": false,
+      "vote_average": 5.378,
+      "vote_count": 49
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/b6e5Nss2QNoQM4wJv2VppChswNP.jpg",
+      "genre_ids": [
+        53,
+        35,
+        80
+      ],
+      "id": 974573,
+      "original_language": "en",
+      "original_title": "Another Simple Favor",
+      "overview": "스테파니와 에밀리가 아름다운 이탈리아 카프리섬에서 재회한다. 에밀리는 부유한 이탈리아 사업가와의 초호화 결혼식을 앞두고 있다. 화려한 하객들과 함께 살인과 배신 또한 초대에 응할 예정인데…",
+      "popularity": 64.904,
+      "poster_path": "/s0kZXXobc9sAvFARdicyYpnbKxm.jpg",
+      "release_date": "2025-03-07",
+      "title": "부탁 하나만 더 들어줘",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 227
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/o8dPH0ZSIyyViP6rjRX1djwCUwI.jpg",
+      "genre_ids": [
+        9648,
+        53,
+        27
+      ],
+      "id": 419430,
+      "original_language": "en",
+      "original_title": "Get Out",
+      "overview": "크리스와 그의 여자친구 로즈는 주말을 맞아 로즈의 부모님 집을 방문한다. 가족들의 과한 친절이 그저 딸이 흑인 남자친구를 데려왔기 때문이라고 생각한 크리스. 하지만 머무는 시간이 길어질수록 이상한 점을 한 두가지씩 발견하는데... 그가 상상도 못한 진실이 기다리고 있었다.",
+      "popularity": 64.6827,
+      "poster_path": "/paPvmoLgUUQojsSdAZmf7dwkKGT.jpg",
+      "release_date": "2017-02-24",
+      "title": "겟 아웃",
+      "video": false,
+      "vote_average": 7.618,
+      "vote_count": 17857
+    }
+  ],
+  "total_pages": 2,
+  "total_results": 40
+}
