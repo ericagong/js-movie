@@ -22,4 +22,3 @@ describe("실제 API 테스트", () => {
     cy.get("@popularMovies").its("body.results").should("have.length", 20);
   });
 });
-
