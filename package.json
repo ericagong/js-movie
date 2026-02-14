@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "test:unit": "jest --no-cache",
     "test:e2e": "cypress open",
-    "deploy": "vite build --base=/js-movie-review/ --minify=false && gh-pages -d dist",
+    "deploy": "vite build --base=/js-movie/ --minify=false && gh-pages -d dist",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"styles/**/*.css\"",
     "lint": "eslint . && stylelint \"styles/**/*.css\""
