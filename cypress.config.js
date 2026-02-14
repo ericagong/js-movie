@@ -4,7 +4,7 @@ export default defineConfig({
   projectId: "d2y71v",
   e2e: {
     specPattern: "cypress/e2e/**/*.{spec,cy}.{js,jsx,ts,tsx}",
-    setupNodeEvents(on, config) {
+    setupNodeEvents() {
       // implement node event listeners here
     },
   },

@@ -119,7 +119,7 @@ addEventListener("load", async () => {
   const $app = document.querySelector("#app");
   const { movies, isLast, hasError, errorMessage } = await getMovies();
 
-  if (!!hasError) {
+  if (hasError) {
     $app.innerHTML = createErrorMessage(errorMessage);
     return;
   }
@@ -130,11 +130,10 @@ addEventListener("load", async () => {
   const $loadMoreButton = document.querySelector("#load-more-movies");
   $loadMoreButton.addEventListener("click", async () => {
     const nextPage = Number($loadMoreButton.dataset.page) + 1;
-    const { movies, isLast, hasError, errorMessage } = await getMovies(
-      nextPage
-    );
+    const { movies, isLast, hasError, errorMessage } =
+      await getMovies(nextPage);
 
-    if (!!hasError) {
+    if (hasError) {
       $app.innerHTML = createErrorMessage(errorMessage);
       return;
     }

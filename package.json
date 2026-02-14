@@ -7,9 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test-unit": "jest --no-cache",
-    "test-e2e": "cypress open",
-    "deploy": "vite build --base=/js-movie-review/ --minify=false && npx gh-pages -d dist"
+    "test:unit": "jest --no-cache",
+    "test:e2e": "cypress open",
+    "deploy": "vite build --base=/js-movie-review/ --minify=false && gh-pages -d dist",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"styles/**/*.css\"",
+    "lint": "eslint . && stylelint \"styles/**/*.css\""
   },
   "license": "ISC",
   "homepage": "https://ericagong.github.io/js-movie",
@@ -20,8 +23,16 @@
     "babel-jest": "^29.3.1",
     "cypress": "^14.3.3",
     "eslint": "^8.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^3.6.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "gh-pages": "^6.3.0",
     "jest": "^29.3.1",
-    "prettier": "^2.8.4",
+    "prettier": "^3.8.1",
+    "stylelint": "^17.3.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^7.0.1",
+    "stylelint-prettier": "^5.0.3",
     "vite": "^6.1.0"
   },
   "jest": {
@@ -35,7 +46,7 @@
     ]
   },
   "engines": {
-    "npm": ">=10.8.2",
-    "node": ">=20.17.0"
+    "node": ">=20.17.0",
+    "pnpm": ">=10.0.0"
   }
 }

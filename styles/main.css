@@ -1,4 +1,4 @@
-@import "./colors.css";
+@import url("./colors.css");
 
 * {
   box-sizing: border-box;
@@ -10,21 +10,21 @@ a {
 }
 
 body {
-  font-size: 16px;
-  color: var(--color-white);
   background-color: var(--color-bluegray-80);
+  color: var(--color-white);
+  font-size: 16px;
 }
 
 #app {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .popular-movies-section {
-  max-width: 1280px;
   margin: 64px 0;
+  max-width: 1280px;
 }
 
 #popular-movies-title {
@@ -40,19 +40,19 @@ body {
   padding-bottom: 48px;
 }
 
-@media (max-width: 1120px) {
+@media (width <= 1120px) {
   .movie-card-view {
     grid-template-columns: repeat(4, 1fr); /* 데스크탑 화면 축소 4개 */
   }
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
   .movie-card-view {
     grid-template-columns: repeat(3, 1fr); /* 테블릿 3개 */
   }
 }
 
-@media (max-width: 390px) {
+@media (width <= 390px) {
   .movie-card-view {
     grid-template-columns: 1fr; /* 모바일 1개 */
   }
@@ -64,13 +64,13 @@ body {
 }
 
 .movie-card > .poster {
-  width: 100%;
   aspect-ratio: 2 / 3;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   border-radius: 8px;
   margin-bottom: 8px;
+  width: 100%;
 }
 
 .movie-card > .rate {
@@ -79,32 +79,32 @@ body {
 }
 
 .movie-card > .rate::before {
-  content: '';
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background-image: url('../images/star_empty.png');
+  background-image: url("../images/star_empty.png");
   background-repeat: no-repeat;
   background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 16px;
   margin-right: 5px;
-  vertical-align: middle;
   position: relative;
-  top: -2px; 
+  top: -2px;
+  vertical-align: middle;
+  width: 16px;
 }
 
 .movie-card > .title {
-  font-weight: bold;
   color: var(--color-white);
+  font-weight: bold;
 }
 
 #load-more-movies {
-  width: 100%;
-  height: 46px;
   background-color: var(--color-lightblue-90);
+  border: none;
+  border-radius: 8px;
   color: var(--color-white);
+  cursor: pointer;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
+  height: 46px;
+  width: 100%;
 }

@@ -1,4 +1,3 @@
-const POPULAR_MOVIES_URL = "https://api.themoviedb.org/3/movie/popular";
 const getPopularMoviesUrl = (page) => {
   return (
     "https://api.themoviedb.org/3/movie/popular?" +
@@ -168,14 +167,14 @@ describe("비동기 통신 과정 오류 테스트", () => {
         defaultCommandTimeout: 6000, // 6초로 늘리기
       },
       () => {
-        cy.intercept("GET", getPopularMoviesUrl(1), (req) => {
+        cy.intercept("GET", getPopularMoviesUrl(1), () => {
           return new Promise(() => {}); // 응답 안 줘서 Abort 유도
         }).as("delayedResponse");
 
         cy.visit("http://localhost:5173");
 
         cy.contains("서버 응답이 지연되고 있습니다.").should("exist");
-      }
+      },
     );
   });
 });
