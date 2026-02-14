@@ -1,82 +1,96 @@
 @import url("./colors.css");
 
-.popular-movies-layout {
-  margin: 64px 0;
-  max-width: 1280px;
-  padding: 0 24px;
-  width: 100%;
+/* Skeleton UI - 영화 카드 */
+.skeleton .thumbnail,
+.skeleton .rate,
+.skeleton strong,
+.skeleton-title {
+  background: linear-gradient(
+    90deg,
+    var(--color-bluegray-90) 25%,
+    var(--color-bluegray-80) 50%,
+    var(--color-bluegray-90) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
-#popular-movies-title {
-  font-size: 1.4rem;
-  font-weight: bold;
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton .rate,
+.skeleton strong {
+  height: 16px;
+  border-radius: 4px;
+  color: transparent;
+  display: block;
+}
+
+.skeleton .rate { width: 50px; }
+.skeleton strong { width: 80%; }
+
+.skeleton-title {
+  height: 24px;
+  width: 200px;
+  border-radius: 4px;
   margin-bottom: 32px;
 }
 
-.movie-card-layout {
-  display: grid;
-  gap: 48px 16px;
-  grid-template-columns: repeat(5, 1fr); /* 기본: 데스크탑 5개 */
-  padding-bottom: 48px;
-}
-
-@media (width <= 1120px) {
-  .movie-card-layout {
-    grid-template-columns: repeat(4, 1fr); /* 데스크탑 화면 축소 4개 */
-  }
-}
-
-@media (width <= 800px) {
-  .movie-card-layout {
-    grid-template-columns: repeat(3, 1fr); /* 테블릿 3개 */
-  }
-}
-
-@media (width <= 390px) {
-  .movie-card-layout {
-    grid-template-columns: 1fr; /* 모바일 1개 */
-  }
-}
-
-.movie-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.movie-card > .poster {
-  aspect-ratio: 2 / 3;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 8px;
-  margin-bottom: 8px;
+/* Skeleton UI - 배너 */
+.skeleton-banner {
   width: 100%;
+  height: 500px;
+  padding: 48px;
+  background: linear-gradient(
+    90deg,
+    var(--color-bluegray-90) 25%,
+    var(--color-bluegray-80) 50%,
+    var(--color-bluegray-90) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
-.movie-card > .rate {
-  color: var(--color-yellow);
-  top: -1px;
+.skeleton-banner .skeleton-logo {
+  height: 32px;
+  width: 180px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.movie-card > .rate::before {
-  background-image: url("../images/star_empty.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  display: inline-block;
-  height: 16px;
-  margin-right: 5px;
-  position: relative;
-  top: -2px;
-  vertical-align: middle;
-  width: 16px;
+.skeleton-banner .skeleton-content {
+  margin-top: 64px;
+  max-width: 1280px;
 }
 
-.movie-card > .title {
-  color: var(--color-white);
-  font-weight: bold;
+.skeleton-banner .skeleton-content > *:not(:last-child) {
+  margin-bottom: 8px;
 }
 
+.skeleton-banner .skeleton-rate {
+  height: 24px;
+  width: 80px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.skeleton-banner .skeleton-banner-title {
+  height: 48px;
+  width: 300px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.skeleton-banner .skeleton-button {
+  height: 36px;
+  width: 100px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 더보기 버튼 */
 #load-more-movies {
   background-color: var(--color-lightblue-90);
   border: none;
