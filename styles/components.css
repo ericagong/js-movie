@@ -5,6 +5,7 @@
 .skeleton .rate,
 .skeleton strong,
 .skeleton-title {
+  animation: shimmer 1.5s infinite;
   background: linear-gradient(
     90deg,
     var(--color-bluegray-90) 25%,
@@ -12,37 +13,44 @@
     var(--color-bluegray-90) 75%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .skeleton .rate,
 .skeleton strong {
-  height: 16px;
   border-radius: 4px;
   color: transparent;
   display: block;
+  height: 16px;
 }
 
-.skeleton .rate { width: 50px; }
-.skeleton strong { width: 80%; }
+.skeleton .rate {
+  width: 50px;
+}
+
+.skeleton strong {
+  width: 80%;
+}
 
 .skeleton-title {
-  height: 24px;
-  width: 200px;
   border-radius: 4px;
+  height: 24px;
   margin-bottom: 32px;
+  width: 200px;
 }
 
 /* Skeleton UI - 배너 */
 .skeleton-banner {
-  width: 100%;
-  height: 500px;
-  padding: 48px;
+  animation: shimmer 1.5s infinite;
   background: linear-gradient(
     90deg,
     var(--color-bluegray-90) 25%,
@@ -50,14 +58,16 @@
     var(--color-bluegray-90) 75%
   );
   background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
+  height: 500px;
+  padding: 48px;
+  width: 100%;
 }
 
 .skeleton-banner .skeleton-logo {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
   height: 32px;
   width: 180px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skeleton-banner .skeleton-content {
@@ -70,24 +80,24 @@
 }
 
 .skeleton-banner .skeleton-rate {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
   height: 24px;
   width: 80px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skeleton-banner .skeleton-banner-title {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
   height: 48px;
   width: 300px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .skeleton-banner .skeleton-button {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
   height: 36px;
   width: 100px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* 더보기 버튼 */

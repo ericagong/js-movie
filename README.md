@@ -20,6 +20,24 @@
 
 <br>
 
+## 🚀 시작하기
+
+```bash
+# 1. 의존성 설치
+pnpm install
+
+# 2. 환경 변수 설정
+cp .env.example .env
+# .env 파일을 열어 VITE_API_KEY 값을 발급받은 TMDB API 키로 교체
+
+# 3. 개발 서버 실행
+pnpm dev
+```
+
+TMDB API 키는 [TMDB API 설정 페이지](https://www.themoviedb.org/settings/api)에서 발급받을 수 있습니다. `.env` 파일은 `.gitignore`에 포함되어 있어 커밋되지 않습니다.
+
+<br>
+
 ## API 실패 레이어 분류
 
 | 단계(요청→전송→응답→해석) | 쉬운 분류 | 예시 상황 | fetch에서 보이는 형태(대표) | 클라이언트 권장 에러 메시지(예시) | 재시도 정책(권장) |
