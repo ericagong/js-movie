@@ -1,13 +1,13 @@
 @import url("./colors.css");
 
-.thumbnail-list {
+.movie-card-view {
   display: grid;
   gap: 70px;
   grid-template-columns: repeat(5, 200px);
   margin: 0 auto 56px;
 }
 
-.thumbnail {
+.poster {
   border-radius: 8px;
   height: 300px;
   width: 200px;

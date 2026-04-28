@@ -6,7 +6,7 @@ function createMovieCard({ id, poster_path, title, vote_average }) {
   <li>
     <div class="item" data-movie-id="${id}">
       <img
-        class="thumbnail"
+        class="poster"
         src="${BASE_IMAGE_URL}${poster_path}"
         alt="${title}"
       />
@@ -14,7 +14,7 @@ function createMovieCard({ id, poster_path, title, vote_average }) {
         <p class="rate">
           <img src="./images/star_empty.png" class="star" /><span>${vote_average}</span>
         </p>
-        <strong>${title}</strong>
+        <strong class="title">${title}</strong>
       </div>
     </div>
   </li>
@@ -32,8 +32,8 @@ function createPopularMovies(movies, isLast) {
     <div class="container">
       <main>
         <section>
-          <h2>지금 인기 있는 영화</h2>
-          <ul class="thumbnail-list">
+          <h2 id="popular-movies-title">지금 인기 있는 영화</h2>
+          <ul class="movie-card-view">
             ${movies.map(createMovieCard).join("")}
           </ul>
           ${createLoadMoreButton(isLast)}
@@ -53,7 +53,7 @@ function createSkeletonCard() {
   return `
   <li>
     <div class="item skeleton">
-      <div class="thumbnail"></div>
+      <div class="poster"></div>
       <div class="item-desc">
         <p class="rate"></p>
         <strong></strong>

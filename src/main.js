@@ -22,13 +22,13 @@ async function renderMoreMovies() {
   const $loadMoreButton = document.querySelector("#load-more-movies");
   const currentPage = Number($loadMoreButton.dataset.page);
 
-  const $thumbnailList = document.querySelector(".thumbnail-list");
+  const $movieCardView = document.querySelector(".movie-card-view");
   const skeletonHTML = Array.from({ length: 20 }, createSkeletonCard).join("");
-  $thumbnailList.innerHTML += skeletonHTML;
+  $movieCardView.innerHTML += skeletonHTML;
 
   const { movies, isLast, hasError, errorMessage } = await fetchMovies(currentPage + 1);
 
-  const $skeletonItems = [...$thumbnailList.querySelectorAll(".skeleton")];
+  const $skeletonItems = [...$movieCardView.querySelectorAll(".skeleton")];
 
   if(!hasError) {
     $skeletonItems.forEach((el, index) => {
@@ -53,7 +53,7 @@ async function initialRender() {
       <main>
         <section>
           <h2 class="skeleton-title"></h2>
-          <ul class="thumbnail-list">
+          <ul class="movie-card-view">
             ${Array.from({ length: 20 }, createSkeletonCard).join("")}
           </ul>
         </section>

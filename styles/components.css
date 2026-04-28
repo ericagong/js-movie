@@ -1,7 +1,7 @@
 @import url("./colors.css");
 
 /* Skeleton UI - 영화 카드 */
-.skeleton .thumbnail,
+.skeleton .poster,
 .skeleton .rate,
 .skeleton strong,
 .skeleton-title {

@@ -114,7 +114,7 @@ span.rate-value {
   margin-left: 8px;
 }
 
-.title {
+.top-rated-movie .title {
   font-size: 3rem;
   font-weight: bold;
 }

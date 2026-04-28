@@ -15,5 +15,3 @@ dist
 *.sw?
 
 .env
-cypress.env.json
-env.js
