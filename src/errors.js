@@ -118,6 +118,21 @@ class ValidationError extends DataError {
   }
 }
 
+// 임시 매핑 — Stage 4.1 에서 ui/renderError 로 분리 예정.
+// cypress e2e 가 검증 중인 메시지를 그대로 보존.
+function toUserMessage(error) {
+  if (error instanceof BadRequestError) return "잘못된 요청입니다.";
+  if (error instanceof UnauthorizedError) return "인증되지 않은 사용자입니다.";
+  if (error instanceof ForbiddenError) return "접근 권한이 없습니다.";
+  if (error instanceof NotFoundError) return "요청한 자원을 찾을 수 없습니다.";
+  if (error instanceof TooManyRequestsError) return "요청이 너무 많습니다. 잠시 후 다시 시도해주세요.";
+  if (error instanceof InternalServerError) return "서버 오류가 발생했습니다.";
+  if (error instanceof HttpError) return "서버 오류가 발생했습니다.";
+  if (error instanceof TimeoutAbortError) return "서버 응답이 지연되고 있습니다.";
+  if (error instanceof NetworkError) return "네트워크 오류가 발생했습니다.";
+  return "알 수 없는 오류가 발생했습니다.";
+}
+
 export {
   AppError,
   TransportError,
@@ -139,4 +154,6 @@ export {
   isDataError,
   ParseError,
   ValidationError,
+  toUserMessage,
 };
+

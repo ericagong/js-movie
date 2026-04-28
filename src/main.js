@@ -1,5 +1,6 @@
 import {createPopularMovies, createMovieCard, createErrorMessage, createSkeletonCard, createBanner, createBannerSkeleton, createFooter} from "./components.js";
-import {fetchMovies} from "./apis.js";
+import {fetchPopularMovies} from "./tmdb.js";
+import {toUserMessage} from "./errors.js";
 
 
 const $app = document.querySelector("#app");
@@ -26,11 +27,10 @@ async function renderMoreMovies() {
   const skeletonHTML = Array.from({ length: 20 }, createSkeletonCard).join("");
   $movieCardView.innerHTML += skeletonHTML;
 
-  const { movies, isLast, hasError, errorMessage } = await fetchMovies(currentPage + 1);
+  try {
+    const { movies, isLast } = await fetchPopularMovies(currentPage + 1);
+    const $skeletonItems = [...$movieCardView.querySelectorAll(".skeleton")];
 
-  const $skeletonItems = [...$movieCardView.querySelectorAll(".skeleton")];
-
-  if(!hasError) {
     $skeletonItems.forEach((el, index) => {
       const $li = el.closest("li");
       if (movies[index]) {
@@ -41,8 +41,9 @@ async function renderMoreMovies() {
     });
     $loadMoreButton.style.visibility = isLast ? "hidden" : "visible";
     $loadMoreButton.dataset.page = isLast ? null : currentPage + 1;
+  } catch (error) {
+    renderErrorMessage(toUserMessage(error));
   }
-  else renderErrorMessage(errorMessage);
 }
 
 
@@ -61,13 +62,14 @@ async function initialRender() {
     </div>
   `;
 
-  const { movies, isLast, hasError, errorMessage } = await fetchMovies();
-  if(!hasError) {
+  try {
+    const { movies, isLast } = await fetchPopularMovies();
     const bannerMovie = movies[0];
     renderMainPage(bannerMovie, movies, isLast);
     setEventListeners();
+  } catch (error) {
+    renderErrorMessage(toUserMessage(error));
   }
-  else renderErrorMessage(errorMessage);
 }
 
 
