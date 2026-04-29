@@ -1,20 +1,19 @@
-const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w200";
-const BACKDROP_IMAGE_URL = "https://image.tmdb.org/t/p/w1280";
+const SKELETON_COUNT = 20;
 
-function createMovieCard({ id, poster_path, title, vote_average }) {
+function createMovieCard(movie) {
   return `
   <li>
-    <div class="item" data-movie-id="${id}">
+    <div class="item" data-movie-id="${movie.id}">
       <img
         class="poster"
-        src="${BASE_IMAGE_URL}${poster_path}"
-        alt="${title}"
+        src="${movie.posterUrl}"
+        alt="${movie.title}"
       />
       <div class="item-desc">
         <p class="rate">
-          <img src="./images/star_empty.png" class="star" /><span>${vote_average}</span>
+          <img src="./images/star_empty.png" class="star" /><span>${movie.formattedRating}</span>
         </p>
-        <strong class="title">${title}</strong>
+        <strong class="title">${movie.title}</strong>
       </div>
     </div>
   </li>
@@ -63,9 +62,9 @@ function createSkeletonCard() {
   `;
 }
 
-function createBanner({ backdrop_path, title, vote_average }) {
-  const backgroundStyle = backdrop_path
-    ? `background-image: url(${BACKDROP_IMAGE_URL}${backdrop_path})`
+function createBanner(movie) {
+  const backgroundStyle = movie.backdropUrl
+    ? `background-image: url(${movie.backdropUrl})`
     : "background-color: var(--color-bluegray-100)";
 
   return `
@@ -79,9 +78,9 @@ function createBanner({ backdrop_path, title, vote_average }) {
         <div class="top-rated-movie">
           <div class="rate">
             <img src="./images/star_empty.png" class="star" alt="star" />
-            <span class="rate-value">${vote_average}</span>
+            <span class="rate-value">${movie.formattedRating}</span>
           </div>
-          <div class="title">${title}</div>
+          <div class="title">${movie.title}</div>
           <button class="primary detail">자세히 보기</button>
         </div>
       </div>
@@ -113,4 +112,34 @@ function createFooter() {
   `;
 }
 
-export {createPopularMovies, createMovieCard, createErrorMessage, createSkeletonCard, createBanner, createBannerSkeleton, createFooter};
+function createSkeletonCards(count = SKELETON_COUNT) {
+  return Array.from({ length: count }, createSkeletonCard).join("");
+}
+
+function createInitialSkeletonPage() {
+  return `
+    ${createBannerSkeleton()}
+    <div class="container">
+      <main>
+        <section>
+          <h2 class="skeleton-title"></h2>
+          <ul class="movie-card-view">
+            ${createSkeletonCards()}
+          </ul>
+        </section>
+      </main>
+    </div>
+  `;
+}
+
+export {
+  createPopularMovies,
+  createMovieCard,
+  createErrorMessage,
+  createSkeletonCard,
+  createSkeletonCards,
+  createBanner,
+  createBannerSkeleton,
+  createFooter,
+  createInitialSkeletonPage,
+};

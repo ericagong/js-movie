@@ -1,76 +1,45 @@
-import {createPopularMovies, createMovieCard, createErrorMessage, createSkeletonCard, createBanner, createBannerSkeleton, createFooter} from "./components.js";
-import {fetchPopularMovies} from "./tmdb.js";
-import {toUserMessage} from "./errors.js";
+import { fetchPopularMovies } from "./api/tmdb.js";
+import { toUserMessage } from "./ui/messages.js";
+import {
+  renderInitialSkeleton,
+  renderMain,
+  renderError,
+  appendSkeletonsToMovieList,
+  replaceSkeletonsWithMovies,
+  getCurrentPage,
+  updateLoadMoreButton,
+  bindLoadMoreClick,
+} from "./ui/render.js";
 
-
-const $app = document.querySelector("#app");
-
-function renderErrorMessage(message) {
-  $app.innerHTML = createErrorMessage(message);
-}
-
-function renderMainPage(bannerMovie, movies, isLast) {
-  $app.innerHTML = createBanner(bannerMovie) + createPopularMovies(movies, isLast) + createFooter();
-}
-
-function setEventListeners() {
-  const $loadMoreButton = document.querySelector("#load-more-movies");
-
-  $loadMoreButton.addEventListener("click", renderMoreMovies);
-}
-
-async function renderMoreMovies() {
-  const $loadMoreButton = document.querySelector("#load-more-movies");
-  const currentPage = Number($loadMoreButton.dataset.page);
-
-  const $movieCardView = document.querySelector(".movie-card-view");
-  const skeletonHTML = Array.from({ length: 20 }, createSkeletonCard).join("");
-  $movieCardView.innerHTML += skeletonHTML;
-
-  try {
-    const { movies, isLast } = await fetchPopularMovies(currentPage + 1);
-    const $skeletonItems = [...$movieCardView.querySelectorAll(".skeleton")];
-
-    $skeletonItems.forEach((el, index) => {
-      const $li = el.closest("li");
-      if (movies[index]) {
-        $li.outerHTML = createMovieCard(movies[index]);
-      } else {
-        $li.remove();
-      }
-    });
-    $loadMoreButton.style.visibility = isLast ? "hidden" : "visible";
-    $loadMoreButton.dataset.page = isLast ? null : currentPage + 1;
-  } catch (error) {
-    renderErrorMessage(toUserMessage(error));
-  }
-}
-
-
-async function initialRender() {
-  $app.innerHTML = `
-    ${createBannerSkeleton()}
-    <div class="container">
-      <main>
-        <section>
-          <h2 class="skeleton-title"></h2>
-          <ul class="movie-card-view">
-            ${Array.from({ length: 20 }, createSkeletonCard).join("")}
-          </ul>
-        </section>
-      </main>
-    </div>
-  `;
-
+async function start() {
+  renderInitialSkeleton();
   try {
     const { movies, isLast } = await fetchPopularMovies();
-    const bannerMovie = movies[0];
-    renderMainPage(bannerMovie, movies, isLast);
-    setEventListeners();
+    const [bannerMovie] = movies;
+    renderMain({ bannerMovie, movies, isLast });
+    bindLoadMoreClick(handleLoadMore);
   } catch (error) {
-    renderErrorMessage(toUserMessage(error));
+    // TODO:  에러 처리 고도화 여부 결정
+    //   - Transport (NetworkError / AbortError) / 5xx → 재시도 버튼 (retryable 분기)
+    //   - 429 / 503 → Retry-After 존중 자동 재시도 (withBackoff)
+    //   - DataError (ParseError / ValidationError) → 모니터링 보고 (console.error / Sentry)
+    //   - AbortError 의도 취소 시나리오 (더보기 연타 race 방어 등) → catcher 가 toUserMessage 호출 건너뛰기
+    renderError(toUserMessage(error));
   }
 }
 
+async function handleLoadMore() {
+  const nextPage = getCurrentPage() + 1;
+  appendSkeletonsToMovieList();
 
-window.addEventListener("load", initialRender);
+  try {
+    const { movies, isLast } = await fetchPopularMovies(nextPage);
+    replaceSkeletonsWithMovies(movies);
+    updateLoadMoreButton({ isLast, page: nextPage });
+  } catch (error) {
+    // TODO:  에러 처리 고도화 여부 결정
+    renderError(toUserMessage(error));
+  }
+}
+
+window.addEventListener("load", start);
