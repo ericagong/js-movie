@@ -46,14 +46,14 @@ function replaceSkeletonsWithMovies(movies) {
   });
 }
 
-function getCurrentPage() {
-  return Number($loadMoreButton().dataset.page);
-}
-
 function updateLoadMoreButton({ isLast, page }) {
   const $btn = $loadMoreButton();
   $btn.style.visibility = isLast ? "hidden" : "visible";
   $btn.dataset.page = isLast ? null : page;
+}
+
+function setLoadMoreDisabled(disabled) {
+  $loadMoreButton().disabled = disabled;
 }
 
 function bindLoadMoreClick(handler) {
@@ -66,7 +66,7 @@ export {
   renderError,
   appendSkeletonsToMovieList,
   replaceSkeletonsWithMovies,
-  getCurrentPage,
   updateLoadMoreButton,
+  setLoadMoreDisabled,
   bindLoadMoreClick,
 };
