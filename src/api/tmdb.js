@@ -55,9 +55,11 @@ function toMovieDTO(d) {
 }
 
 // 실패 시 raw APIError 인스턴스를 그대로 throw — 호출부가 catch 해서 UX 매핑 책임.
-async function fetchPopularMovies(page = DEFAULT_PAGE) {
+// signal: 호출자가 생명주기 abort 주입할 때 사용. wrapper 로 그대로 pass-through.
+async function fetchPopularMovies(page = DEFAULT_PAGE, { signal } = {}) {
   const response = await request(
     buildTmdbUrl("/movie/popular", { page: String(page) }),
+    { signal },
   );
   let data;
   try {

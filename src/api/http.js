@@ -18,14 +18,19 @@ const DEFAULT_TIMEOUT = 3000;
 const isFetchAborted = (error) =>
   error?.name === "AbortError" || error?.name === "TimeoutError";
 
+function composeRequestSignal(callerSignal) {
+  const timeoutSignal = AbortSignal.timeout(DEFAULT_TIMEOUT);
+  return callerSignal
+    ? AbortSignal.any([callerSignal, timeoutSignal])
+    : timeoutSignal;
+}
+
 // 외부 공개 — Transport / HTTP 단계의 native / status 를 우리 어휘로 normalize 해서 throw.
 // Data 단계 (JSON 파싱 / 스키마 검증) 는 도메인 호출자 (tmdb.js) 의 몫.
-async function request(url) {
+async function request(url, { signal: callerSignal } = {}) {
   let response;
   try {
-    response = await fetch(url, {
-      signal: AbortSignal.timeout(DEFAULT_TIMEOUT),
-    });
+    response = await fetch(url, { signal: composeRequestSignal(callerSignal) });
   } catch (error) {
     throw TransportError.toMatchingError(isFetchAborted(error));
   }
