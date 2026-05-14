@@ -1,0 +1,114 @@
+@import url("./colors.css");
+
+/* Skeleton UI - 영화 카드 */
+.skeleton .poster,
+.skeleton .rate,
+.skeleton strong,
+.skeleton-title {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-bluegray-90) 25%,
+    var(--color-bluegray-80) 50%,
+    var(--color-bluegray-90) 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton .rate,
+.skeleton strong {
+  border-radius: 4px;
+  color: transparent;
+  display: block;
+  height: 16px;
+}
+
+.skeleton .rate {
+  width: 50px;
+}
+
+.skeleton strong {
+  width: 80%;
+}
+
+.skeleton-title {
+  border-radius: 4px;
+  height: 24px;
+  margin-bottom: 32px;
+  width: 200px;
+}
+
+/* Skeleton UI - 배너 */
+.skeleton-banner {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-bluegray-90) 25%,
+    var(--color-bluegray-80) 50%,
+    var(--color-bluegray-90) 75%
+  );
+  background-size: 200% 100%;
+  height: 500px;
+  padding: 48px;
+  width: 100%;
+}
+
+.skeleton-banner .skeleton-logo {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
+  height: 32px;
+  width: 180px;
+}
+
+.skeleton-banner .skeleton-content {
+  margin-top: 64px;
+  max-width: 1280px;
+}
+
+.skeleton-banner .skeleton-content > *:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.skeleton-banner .skeleton-rate {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
+  height: 24px;
+  width: 80px;
+}
+
+.skeleton-banner .skeleton-banner-title {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
+  height: 48px;
+  width: 300px;
+}
+
+.skeleton-banner .skeleton-button {
+  background-color: rgb(255 255 255 / 10%);
+  border-radius: 4px;
+  height: 36px;
+  width: 100px;
+}
+
+/* 더보기 버튼 */
+#load-more-movies {
+  background-color: var(--color-lightblue-90);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 46px;
+  width: 100%;
+}

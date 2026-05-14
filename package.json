@@ -1,28 +1,40 @@
 {
   "name": "javascript-movie-review",
   "version": "2.0.0",
-  "description": "우아한테크코스 레벨1 영화 리뷰 미션 저장소",
+  "description": "Nextstep 레벨1 영화 리뷰 미션 저장소",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test-unit": "jest --no-cache",
-    "test-e2e": "cypress open",
-    "deploy": "vite build --base=/js-movie-review/ --minify=false && npx gh-pages -d dist"
+    "test:unit": "jest --no-cache --passWithNoTests",
+    "test:e2e": "cypress open",
+    "deploy": "vite build --base=/js-movie/ --minify=false && gh-pages -d dist",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"styles/**/*.css\"",
+    "lint": "eslint . && stylelint \"styles/**/*.css\""
   },
   "license": "ISC",
-  "homepage": "https://{username}.github.io/js-movie-review",
+  "homepage": "https://ericagong.github.io/js-movie",
   "devDependencies": {
-    "vite": "^6.1.0",
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@types/jest": "^29.4.0",
-    "babel-jest": "^29.3.1",
-    "jest": "^29.3.1",
-    "cypress": "^12.3.0",
-    "eslint": "^8.35.0",
-    "prettier": "^2.8.4"
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.3.0",
+    "cypress": "^15.14.1",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^6.3.1",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.5.0",
+    "jest": "^30.3.0",
+    "prettier": "^3.8.3",
+    "stylelint": "^17.8.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1",
+    "stylelint-prettier": "^5.0.3",
+    "vite": "^8.0.9"
   },
   "jest": {
     "transform": {
@@ -35,7 +47,7 @@
     ]
   },
   "engines": {
-    "npm": ">=10.8.2",
-    "node": ">=20.17.0"
+    "node": ">=24.5.0",
+    "pnpm": ">=10.0.0"
   }
 }

@@ -1,6 +1,7 @@
-@import "./colors.css";
-@import "./main.css";
-@import "./modal.css";
-@import "./reset.css";
-@import "./tab.css";
-@import "./thumbnail.css";
+@import url("./reset.css");
+@import url("./colors.css");
+@import url("./main.css");
+@import url("./components.css");
+@import url("./modal.css");
+@import url("./tab.css");
+@import url("./thumbnail.css");

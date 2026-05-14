@@ -1,5 +1,5 @@
 :root {
-  --color-white: #ffffff;
+  --color-white: #fff;
   --color-lightblue-90: #0da9fd;
   --color-bluegray-100: #242a32;
   --color-bluegray-80: #39414d;
@@ -8,6 +8,6 @@
   --color-bluegray-90: #2f3844;
   --color-gray-300: #d1d3d4;
   --color-yellow: #ffc700;
-  --color-ffffff: #ffffff;
+  --color-ffffff: #fff;
   --color-242a32: #242a32;
 }
